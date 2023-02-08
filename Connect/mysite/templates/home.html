@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <style media="screen">
+      #title{
+        background-color: #434242;
+        color: #fff;
+      }
+
+      .st{
+
+        width: 100%
+
+      }
+      h1
+      {
+        font-family: 'Montserrat-Black';
+
+        font-size: 4rem;
+        line-height: 1.5;
+      }
+      .navbar-brand
+      {
+        padding-left: 20px;
+      }
+      .container-fluid{
+        padding: 0px 0px;
+      }
+
+      .navbar-brand{
+        font-family: "Ubuntu";
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+
+      .navbar{
+        padding:0 0 0rem;
+      }
+
+      .nav-item{
+        padding: 0 18px;
+      }
+
+      .nav-link
+      {
+        font-size: 1.2rem;
+        font-family: "Montserrat";
+      }
+      .container
+        {
+
+          display : flex;
+          justify-content: space-between;
+          padding: 13px 5%;
+          margin-right: 2000px;
+          padding-right: 50px;
+          padding-left: 1px;
+        }
+
+
+
+
+
+        .main-content
+        {
+          flex-basis: 60%;
+        }
+
+
+        .imp-links a img{
+          width: 25px;
+          margin-right: 15px;
+        }
+
+        .write-post-container{
+          width: 100%;
+          background: #034a4ad6;
+          border-radius: 6px;
+          padding: 20px;
+          columns: #626262;
+        }
+
+        .user-profile{
+          display: flex;
+          align-items: center;
+        }
+
+        .user-profile img{
+          width: 45px;
+          border-radius: 50%;
+          margin-right: 10px;
+
+        }
+
+        .post-input-container{
+          padding-left: 55px;
+          padding-top: 20px;
+        }
+
+        .post-input-container textarea{
+          width: 100%;
+          border: 0;
+          outline: 0;
+          border-bottom: 1px solid #ccc;
+          background: transparent;
+          resize: none;
+
+        }
+
+        .post-container{
+          width: 100%;
+          background: #fff;
+          border-radius: 6px;
+          padding: 20px;
+          color: #626262;
+          margin: 20px 0;
+
+        }
+
+        .user-profile span{
+          font-size: 13px;
+          color: #9a9a9a;
+        }
+
+        .post-text
+        {
+          color: black;
+          margin: 15px 0;
+          font-size: 15px;
+        }
+
+        .post-img
+        {
+
+          border-radius: 4px;
+          border-bottom: 5px;
+        }
+
+    </style>
+    <title>main site</title>
+
+  </head>
+  <body>
+    <div>
+    <section id="title">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href=" ">     Connect </a>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Create post </a>
+            </li>
+            <li class="nav-item">
+              <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      News Feed
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="{%url 'national'%}">National News</a></li>
+      <li><a class="dropdown-item" href="{%url 'sports'%}">Sports News</a></li>
+      <li><a class="dropdown-item" href="{%url 'ent'%}">Entrainment News</a></li>
+    </ul>
+  </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="chat.html"> Chat </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{%url 'profile'%}">Profile</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+  </div>
+  <div class="container">
+
+    <div  class="left-sidebar">
+        <div class="imp-links">
+
+        </div>
+
+    </div>
+    <div  class="main-content">
+        <div class="write-post-container">
+            <div class="user-profile">
+                <img src="{% static "gamer.png" %}" alt="">
+                <div>
+                    <p>{{user}}</p>
+                    <small>Public</small>
+                </div>
+            </div>
+            <div class="post-input-container">
+                <textarea rows="3" placeholder="what's on your mind, sai"></textarea>
+            </div>
+        </div>
+
+        <div class="post-container">
+            <div class="user-profile">
+                <img src="{% static "gamer.png" %}" alt="">
+                <div>
+                    <p>Sai Charan</p>
+                    <span>Feb 09 2023, 4:00 pm</span>
+                </div>
+            </div>
+
+            <p class="post-text">Recipient of the Super Soldier serum, World War II hero Steve Rogers fights for American ideals as one of the world's mightiest heroes and the leader of the Avengers.</p>
+            <img src="{% static "cc1.jpg" %}" alt="" class="post-img" height="700">
+        </div>
+        <div class="post-container">
+            <div class="user-profile">
+                <img src="{% static "gamer.png" %}" alt="">
+                <div>
+                    <p>Bagawan</p>
+                    <span>Feb 14 2023, 6:00 pm</span>
+                </div>
+            </div>
+
+            <p class="post-text">Proficient scientist and engineer Genius level intellect Powered armor suit granting: Superhuman strength, speed, durability, agility, reflexes, and senses Energy repulsor and missile projection Regenerative life support Supersonic flight</p>
+            <img src="{% static "cc3.jpg" %}" alt="" class="post-img" height="700">
+        </div>
+
+        <div class="post-container">
+            <div class="user-profile">
+                <img src="{% static "gamer.png" %}" alt="">
+                <div>
+                    <p>Akash</p>
+                    <span>Feb 15 2023, 8:00 pm</span>
+                </div>
+            </div>
+
+            <p class="post-text">Harry Potter and the Cursed Child is the eighth story in the Harry Potter series and the first official Harry Potter story to be presented on stage. Based on an original new story by J.K. Rowling, John Tiffany and Jack Thorne, the play was scripted by Jack and directed by John.</p>
+            <img src="{% static "cc4.jpg" %}" alt="" class="post-img" height="700">
+        </div>
+
+        <div class="post-container">
+            <div class="user-profile">
+                <img src="{% static "gamer.png" %}" alt="">
+                <div>
+                    <p>Abhishek</p>
+                    <span>Feb 20 2023, 10:00 pm</span>
+                </div>
+            </div>
+
+            <p class="post-text">n 1999, Babu made his debut as a lead actor with the film Raja Kumarudu, directed by K. Raghavendra Rao and co-starring Priety Zinta. The film was commercially successful, and people began referring to him with the title Prince.</p>
+            <img src="{% static "cc6.webp" %}" alt="" class="post-img" height="700">
+        </div>
+
+
+
+
+    </div>
+    <div  class="rignt-sidebar"></div>
+
+</div>
+  </body>
+</html>
